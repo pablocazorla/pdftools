@@ -25,7 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           onClick={onGoHome}
           className="flex cursor-pointer items-center gap-3 group text-left transition-opacity hover:opacity-90"
         >
-          <div className="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:bg-orange-600 transition-all">
+          <div className="w-10 h-10 rounded-xl bg-orange-950 flex items-center justify-center group-hover:bg-orange-600 transition-all">
             <FileText className="w-5 h-5 text-white" />
           </div>
           <div>
