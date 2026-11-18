@@ -28,4 +28,12 @@ describe('API Routes', () => {
     expect(res.status).toBe(400);
     expect(res.body.error.code).toBe('VALIDATION_ERROR');
   });
+
+  it('POST /api/storage/clean removes temporary entries and returns success', async () => {
+    const res = await request(app).post('/api/storage/clean');
+    expect(res.status).toBe(200);
+    expect(res.body.success).toBe(true);
+    expect(res.body.message).toBeDefined();
+    expect(typeof res.body.removedEntries).toBe('number');
+  });
 });

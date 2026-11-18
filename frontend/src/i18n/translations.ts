@@ -10,6 +10,9 @@ export const translations: Record<Language, TranslationSchema> = {
     backToTools: 'Back to catalog',
     footerText: 'Local and confidential processing',
     footerPrivacy: 'Processed files are automatically deleted after their temporary retention period.',
+    cleanStorage: 'Clean Storage',
+    cleaningStorage: 'Cleaning storage...',
+    storageCleaned: 'Storage cleaned successfully!',
     selectLanguage: 'Language',
 
     heroBadge: 'Complete PDF Toolkit',
@@ -190,6 +193,9 @@ export const translations: Record<Language, TranslationSchema> = {
     backToTools: 'Volver al catálogo',
     footerText: 'Procesamiento local y confidencial',
     footerPrivacy: 'Los archivos procesados se eliminan automáticamente tras su retención temporal.',
+    cleanStorage: 'Limpiar almacenamiento',
+    cleaningStorage: 'Limpiando almacenamiento...',
+    storageCleaned: '¡Almacenamiento limpiado con éxito!',
     selectLanguage: 'Idioma',
 
     heroBadge: 'Suite completa de herramientas PDF',

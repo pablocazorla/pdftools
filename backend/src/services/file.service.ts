@@ -103,6 +103,32 @@ export class FileService {
       .slice(0, 100);
     return `${base || 'document'}${ext}`;
   }
+
+  public cleanAllStorage(): { removedEntries: number } {
+    this.ensureStorageDir();
+    let count = 0;
+    try {
+      const entries = fs.readdirSync(env.resolvedStorageDir);
+      for (const entry of entries) {
+        if (entry === '.gitkeep') continue;
+        const fullPath = path.join(env.resolvedStorageDir, entry);
+        try {
+          fs.rmSync(fullPath, { recursive: true, force: true });
+          count++;
+        } catch (err) {
+          console.error(`Failed to delete ${fullPath}:`, err);
+        }
+      }
+      // Re-ensure staging dir exists
+      const stagingDir = path.join(env.resolvedStorageDir, '_staging');
+      if (!fs.existsSync(stagingDir)) {
+        fs.mkdirSync(stagingDir, { recursive: true });
+      }
+    } catch (err) {
+      console.error('Error cleaning storage directory:', err);
+    }
+    return { removedEntries: count };
+  }
 }
 
 export const fileService = new FileService();

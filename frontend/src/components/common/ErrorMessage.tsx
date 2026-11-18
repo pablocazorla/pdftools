@@ -1,6 +1,6 @@
-import React from 'react';
-import { AlertCircle, X } from 'lucide-react';
-import { useI18n } from '../../i18n/LanguageContext';
+import React from "react";
+import { AlertCircle, X } from "lucide-react";
+import { useI18n } from "../../i18n/LanguageContext";
 
 interface ErrorMessageProps {
   message: string;
@@ -8,7 +8,11 @@ interface ErrorMessageProps {
   onDismiss?: () => void;
 }
 
-export const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, code, onDismiss }) => {
+export const ErrorMessage: React.FC<ErrorMessageProps> = ({
+  message,
+  code,
+  onDismiss,
+}) => {
   const { t } = useI18n();
 
   return (
@@ -28,7 +32,7 @@ export const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, code, onDis
       {onDismiss && (
         <button
           onClick={onDismiss}
-          className="text-rose-400 hover:text-rose-200 p-1 rounded-lg hover:bg-rose-500/20 transition-colors"
+          className="text-rose-400 hover:text-rose-200 p-1 rounded-lg hover:bg-rose-500/20 transition-colors cursor-pointer"
           aria-label={t.errors.dismiss}
         >
           <X className="w-4 h-4" />

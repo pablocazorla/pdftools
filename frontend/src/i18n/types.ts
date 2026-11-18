@@ -10,6 +10,9 @@ export interface TranslationSchema {
   backToTools: string;
   footerText: string;
   footerPrivacy: string;
+  cleanStorage: string;
+  cleaningStorage: string;
+  storageCleaned: string;
   selectLanguage: string;
 
   // Hero Section

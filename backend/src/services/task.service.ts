@@ -144,6 +144,10 @@ export class TaskService {
     this.cleanupInterval.unref?.();
   }
 
+  public clearAllTasks(): void {
+    this.tasks.clear();
+  }
+
   public purgeExpiredTasks(): void {
     const now = new Date();
     for (const [taskId, task] of this.tasks.entries()) {

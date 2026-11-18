@@ -2,6 +2,8 @@ import { Router } from 'express';
 import { upload } from '../middleware/upload.middleware.js';
 import { toolsController } from '../controllers/tools.controller.js';
 import { taskController } from '../controllers/task.controller.js';
+import { fileService } from '../services/file.service.js';
+import { taskService } from '../services/task.service.js';
 
 export const apiRouter = Router();
 
@@ -51,4 +53,15 @@ apiRouter.get('/tasks/:taskId/files/:fileId', (req, res, next) => {
 
 apiRouter.delete('/tasks/:taskId', (req, res, next) => {
   taskController.deleteTask(req, res, next);
+});
+
+// Storage Cleanup Endpoint
+apiRouter.post('/storage/clean', (_req, res) => {
+  const result = fileService.cleanAllStorage();
+  taskService.clearAllTasks();
+  res.json({
+    success: true,
+    message: 'Almacenamiento temporal limpiado exitosamente',
+    removedEntries: result.removedEntries,
+  });
 });

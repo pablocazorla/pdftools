@@ -156,6 +156,13 @@ export const api = {
     await handleResponse<{ success: boolean }>(res);
   },
 
+  async cleanStorage(): Promise<{ success: boolean; message: string; removedEntries: number }> {
+    const res = await fetch(`${API_BASE}/storage/clean`, {
+      method: 'POST',
+    });
+    return handleResponse<{ success: boolean; message: string; removedEntries: number }>(res);
+  },
+
   /**
    * Polls task until completion or failure
    */

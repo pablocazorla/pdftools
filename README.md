@@ -171,6 +171,7 @@ npm run typecheck
 | `GET` | `/api/tasks/:taskId` | `:taskId` (UUID) | Consulta el estado, progreso y resultados |
 | `GET` | `/api/tasks/:taskId/files/:fileId` | `:taskId`, `:fileId`, `inline` (opcional) | Descarga un archivo o genera vista previa |
 | `DELETE` | `/api/tasks/:taskId` | `:taskId` (UUID) | Elimina la tarea y sus archivos físicos |
+| `POST` | `/api/storage/clean` | Ninguno | Purga todos los archivos temporales de `backend/storage` |
 
 ---
 
