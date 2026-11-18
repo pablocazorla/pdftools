@@ -1,0 +1,15 @@
+node_modules
+dist
+.vite
+.env
+.env.local
+storage/*
+!storage/.gitkeep
+backend/storage/*
+!backend/storage/.gitkeep
+__pycache__
+*.pyc
+.pytest_cache
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,21 @@
+{
+  "name": "pdftools-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"backend,frontend\" -c \"blue,green\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run --prefix backend dev",
+    "dev:frontend": "npm run --prefix frontend dev",
+    "build:backend": "npm run --prefix backend build",
+    "build:frontend": "npm run --prefix frontend build",
+    "test:backend": "npm run --prefix backend test",
+    "typecheck": "npm run --prefix backend typecheck && npm run --prefix frontend build"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}

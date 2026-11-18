@@ -1,0 +1,3 @@
+@echo off
+echo Iniciando PDF Tools (Backend + Frontend)...
+npm run dev
